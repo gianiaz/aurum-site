@@ -1,0 +1,37 @@
+# Aurum
+
+> The AI-powered pulse of your money.
+
+Aurum is a multilingual personal finance landing page for a web application that helps users track accounts, transactions, budgets, charts, Telegram notifications and optional AI-assisted financial questions.
+
+## Canonical Pages
+
+- Italian: /
+- English: /en/
+- German: /de/
+- French: /fr/
+- Italian privacy: /privacy/
+- English privacy: /en/privacy/
+- German privacy: /de/privacy/
+- French privacy: /fr/privacy/
+
+## Key Topics
+
+- Personal finance tracking
+- Budget planning
+- Transaction categorization
+- AI financial assistant
+- Telegram bot
+- Encryption at rest
+- Bring-your-own AI key
+- Aurum-managed AI key
+
+## Public Pricing
+
+- Standard: 1.99 EUR/month or 14.99 EUR/year
+- Free: 2.99 EUR/month or 23.99 EUR/year, includes AI with the user's own API key
+- Full: 4.99 EUR/month or 39.99 EUR/year, includes AI with Aurum's API key
+
+## Content Source
+
+Localized page copy is stored in Markdown files under `content/<locale>/home.md`.

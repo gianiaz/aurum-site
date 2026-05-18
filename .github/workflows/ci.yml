@@ -1,0 +1,74 @@
+name: CI / CD
+
+on:
+  push:
+    branches: [develop, main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  REGISTRY: ghcr.io
+  OWNER: ${{ github.repository_owner }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    env:
+      IMAGE_TAG: ${{ github.ref == 'refs/heads/develop' && 'staging' || 'latest' }}
+      CACHE_SCOPE: ${{ github.ref == 'refs/heads/develop' && 'staging' || 'prod' }}
+      COOLIFY_PHP_WEBHOOK_URL: ${{ github.ref == 'refs/heads/develop' && secrets.COOLIFY_STAGING_WEBHOOK_URL || secrets.COOLIFY_PROD_WEBHOOK_URL }}
+      COOLIFY_NGINX_WEBHOOK_URL: ${{ github.ref == 'refs/heads/develop' && secrets.COOLIFY_STAGING_NGINX_WEBHOOK_URL || secrets.COOLIFY_PROD_NGINX_WEBHOOK_URL }}
+      COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push PHP image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: docker/Dockerfile.prod
+          push: true
+          platforms: linux/amd64,linux/arm64
+          tags: ${{ env.REGISTRY }}/${{ env.OWNER }}/aurum-site-php:${{ env.IMAGE_TAG }}
+          cache-from: type=gha,scope=${{ env.CACHE_SCOPE }}-php
+          cache-to: type=gha,scope=${{ env.CACHE_SCOPE }}-php,mode=max
+
+      - name: Build and push Nginx image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: docker/Dockerfile.nginx
+          push: true
+          platforms: linux/amd64,linux/arm64
+          tags: ${{ env.REGISTRY }}/${{ env.OWNER }}/aurum-site-nginx:${{ env.IMAGE_TAG }}
+          cache-from: type=gha,scope=${{ env.CACHE_SCOPE }}-nginx
+          cache-to: type=gha,scope=${{ env.CACHE_SCOPE }}-nginx,mode=max
+
+      - name: Trigger Coolify PHP deploy
+        run: |
+          curl -fsSL -X GET "${COOLIFY_PHP_WEBHOOK_URL}" \
+            -H "Authorization: Bearer ${COOLIFY_TOKEN}"
+
+      - name: Trigger Coolify Nginx deploy
+        run: |
+          curl -fsSL -X GET "${COOLIFY_NGINX_WEBHOOK_URL}" \
+            -H "Authorization: Bearer ${COOLIFY_TOKEN}"

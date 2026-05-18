@@ -1,6 +1,9 @@
 .git
+.github
 .DS_Store
 .aider.tags.cache.v4
 .aider.chat.history.md
 .aider.input.history
 .env.local
+docs
+brain

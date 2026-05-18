@@ -16,6 +16,7 @@ services:
     environment:
       BREVO_API_KEY: "${BREVO_API_KEY:-}"
       BREVO_LIST_ID: "${BREVO_LIST_ID:-}"
+      AURUM_REGISTER_URL: "${AURUM_REGISTER_URL:-https://go.aurumvault.app/#/register}"
     volumes:
       - .:/app
     restart: unless-stopped

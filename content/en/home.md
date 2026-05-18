@@ -36,17 +36,17 @@ Aurum encrypts sensitive data at rest: remittance text, account names, counterpa
 ## Features
 A financial assistant that speaks your language.
 
-- Natural chat|Ask how much you spent, whether a category is over budget, or how your balance is moving.
-- Telegram bot|Receive import notifications and ask quick questions without opening the app.
+- Natural chat|Ask how much you spent, log a transaction with a sentence, or send a photo of your receipt.
+- Telegram bot|Get alerts, log expenses and ask quick questions without opening the app.
 - Charts and budgets|Read balance, category spending and monthly flow through focused views.
 
 ## Automation
 Frictionless tracking. Stop filling forms.
 
-Connect your bank, import movements and let automatic rules assign categories and counterparties consistently.
+Add transactions manually, with the assistant or via Telegram: automatic rules assign categories and counterparties consistently.
 
-- Overnight import|New transactions are downloaded automatically and summarized on Telegram.
-- Smart categorization|A rule learned once keeps working on every new transaction.
+- Flexible entry|Log transactions manually, with a sentence to the assistant, or by sending a receipt photo on Telegram.
+- Smart categorization|Define a rule once — for example "ELECTRIC" from Con Edison to Utilities — and Aurum applies it to future transactions.
 
 ## Pricing
 Clear tiers, no surprises.

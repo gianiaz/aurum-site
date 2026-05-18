@@ -36,17 +36,17 @@ Aurum chiffre les données sensibles au repos: libellés, noms de comptes, contr
 ## Features
 Un assistant financier qui parle votre langue.
 
-- Chat naturel|Demandez combien vous avez dépensé, si une catégorie dépasse le budget ou comment évolue votre solde.
-- Bot Telegram|Recevez les notifications d'import et posez des questions rapides sans ouvrir l'app.
+- Chat naturel|Demandez combien vous avez dépensé, enregistrez un mouvement en une phrase ou envoyez la photo du ticket.
+- Bot Telegram|Recevez des alertes, enregistrez des dépenses et posez des questions rapides sans ouvrir l'app.
 - Graphiques et budget|Lisez solde, dépenses par catégorie et flux mensuel dans des vues ciblées.
 
 ## Automation
 Un suivi fluide. Plus de formulaires.
 
-Connectez votre banque, importez les mouvements et laissez les règles automatiques associer catégories et contreparties.
+Saisissez les mouvements à la main, via l'assistant ou Telegram : les règles automatiques assignent catégories et contreparties de façon cohérente.
 
-- Import nocturne|Les nouvelles transactions sont téléchargées automatiquement et résumées sur Telegram.
-- Catégorisation intelligente|Une règle apprise une fois continue de fonctionner sur chaque nouvelle transaction.
+- Saisie flexible|Enregistrez des mouvements à la main, en une phrase à l'assistant ou en envoyant la photo du ticket sur Telegram.
+- Catégorisation intelligente|Définissez une règle une fois — par exemple « FACTURE » d'EDF en Utilités — et Aurum l'applique aux transactions suivantes.
 
 ## Pricing
 Des niveaux clairs, sans surprise.

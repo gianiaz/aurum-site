@@ -36,17 +36,17 @@ Aurum verschlüsselt sensible Daten im Ruhezustand: Zahlungszwecke, Kontonamen, 
 ## Features
 Ein Finanzassistent, der deine Sprache spricht.
 
-- Natürlicher Chat|Frag nach Ausgaben, Budgetüberschreitungen oder der Entwicklung deines Saldos.
-- Telegram Bot|Erhalte Importmeldungen und stelle schnelle Fragen, ohne die App zu öffnen.
+- Natürlicher Chat|Frag nach Ausgaben, erfasse eine Transaktion mit einem Satz oder sende ein Foto des Belegs.
+- Telegram Bot|Erhalte Benachrichtigungen, erfasse Ausgaben und stelle schnelle Fragen, ohne die App zu öffnen.
 - Diagramme und Budget|Lies Saldo, Kategorien und monatlichen Cashflow in fokussierten Ansichten.
 
 ## Automation
 Reibungsloses Tracking. Keine Formulare mehr.
 
-Verbinde deine Bank, importiere Bewegungen und lasse automatische Regeln Kategorien und Gegenparteien konsistent zuordnen.
+Erfasse Bewegungen manuell, mit dem Assistenten oder über Telegram: automatische Regeln ordnen Kategorien und Gegenparteien konsistent zu.
 
-- Nachtlicher Import|Neue Transaktionen werden automatisch geladen und per Telegram zusammengefasst.
-- Smarte Kategorisierung|Eine einmal gelernte Regel arbeitet weiter fur jede neue Transaktion.
+- Flexibles Erfassen|Erfasse Bewegungen manuell, mit einem Satz an den Assistenten oder per Belegfoto auf Telegram.
+- Smarte Kategorisierung|Definiere eine Regel einmal — z. B. „STROM“ von EnBW in Versorgung — und Aurum wendet sie auf folgende Transaktionen an.
 
 ## Pricing
 Klare Stufen, ohne Überraschungen.

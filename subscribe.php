@@ -14,7 +14,7 @@ function localized_message(string $locale, string $key): string
 {
     $messages = [
         'it' => [
-            'success' => 'Grazie, controlla la tua email: sei nella lista Aurum.',
+            'success' => 'Grazie!',
             'invalid' => 'Inserisci un indirizzo email valido.',
             'config' => 'Newsletter non configurata. Imposta BREVO_API_KEY e BREVO_LIST_ID.',
             'consent' => 'Per iscriverti devi autorizzare l’invio di email da Aurum.',
@@ -22,7 +22,7 @@ function localized_message(string $locale, string $key): string
             'method' => 'Metodo non supportato.',
         ],
         'en' => [
-            'success' => 'Thanks, check your inbox: you are on the Aurum list.',
+            'success' => 'Thanks!',
             'invalid' => 'Please enter a valid email address.',
             'config' => 'Newsletter is not configured. Set BREVO_API_KEY and BREVO_LIST_ID.',
             'consent' => 'To subscribe, you need to allow Aurum to send you emails.',
@@ -30,7 +30,7 @@ function localized_message(string $locale, string $key): string
             'method' => 'Method not supported.',
         ],
         'de' => [
-            'success' => 'Danke, prüfe dein Postfach: du bist auf der Aurum-Liste.',
+            'success' => 'Danke!',
             'invalid' => 'Bitte gib eine gültige E-Mail-Adresse ein.',
             'config' => 'Newsletter ist nicht konfiguriert. Setze BREVO_API_KEY und BREVO_LIST_ID.',
             'consent' => 'Für die Anmeldung musst du E-Mails von Aurum erlauben.',
@@ -38,7 +38,7 @@ function localized_message(string $locale, string $key): string
             'method' => 'Methode nicht unterstützt.',
         ],
         'fr' => [
-            'success' => 'Merci, vérifiez votre boîte mail: vous êtes dans la liste Aurum.',
+            'success' => 'Merci!',
             'invalid' => 'Veuillez saisir une adresse email valide.',
             'config' => 'Newsletter non configurée. Définissez BREVO_API_KEY et BREVO_LIST_ID.',
             'consent' => 'Pour vous inscrire, vous devez autoriser Aurum à vous envoyer des emails.',

@@ -1,0 +1,6 @@
+FROM nginx:1.29.6-alpine3.23
+
+ENV PHP_FPM_NGINX_UPSTREAM=aurum-site-php:9000
+
+COPY docker/nginx/conf.d/prod.conf /etc/nginx/templates/default.conf.template
+COPY . /app

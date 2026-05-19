@@ -100,6 +100,17 @@ function absolute_url(string $path): string
     return site_origin() . $path;
 }
 
+function register_url(): string
+{
+    $url = trim((string) getenv('AURUM_REGISTER_URL'));
+
+    if ($url !== '' && preg_match('#^https://#i', $url) === 1) {
+        return $url;
+    }
+
+    return 'https://go.aurumvault.app/#/register';
+}
+
 function markdown_plain(string $text): string
 {
     $text = preg_replace('/\*\*(.*?)\*\*/', '$1', $text) ?? $text;
@@ -238,6 +249,7 @@ $newsletterPlaceholder = $meta['newsletter_placeholder'] ?? 'you@example.com';
 $newsletterCta = $meta['newsletter_cta'] ?? 'Subscribe';
 $newsletterConsent = $meta['newsletter_consent'] ?? 'I agree to receive email updates from Aurum.';
 $copyright = $meta['copyright'] ?? 'Aurum';
+$registerUrl = register_url();
 
 $nav = list_items($sections['navigation'] ?? []);
 $hero = $sections['hero'] ?? ['title' => $title, 'blocks' => []];
@@ -595,7 +607,7 @@ $assetVersion = (string) max(
                                 <small><?= markdown_inline($annualPrice) ?></small>
                             </p>
                             <p><?= markdown_inline($planText) ?></p>
-                            <a class="button <?= $index === 2 ? 'button--primary' : 'button--secondary' ?>" href="mailto:hello@aurum.local"><?= e($index === 2 ? $primaryCta : $secondaryCta) ?></a>
+                            <a class="button <?= $index === 2 ? 'button--primary' : 'button--secondary' ?>" href="<?= e($registerUrl) ?>"><?= e($primaryCta) ?></a>
                         </article>
                     <?php endforeach; ?>
                 </div>

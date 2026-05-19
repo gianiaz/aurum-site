@@ -607,7 +607,7 @@ $assetVersion = (string) max(
                                 <small><?= markdown_inline($annualPrice) ?></small>
                             </p>
                             <p><?= markdown_inline($planText) ?></p>
-                            <a class="button <?= $index === 2 ? 'button--primary' : 'button--secondary' ?>" href="<?= e($registerUrl) ?>"><?= e($index === 2 ? $primaryCta : $secondaryCta) ?></a>
+                            <a class="button <?= $index === 2 ? 'button--primary' : 'button--secondary' ?>" href="<?= e($registerUrl) ?>"><?= e($primaryCta) ?></a>
                         </article>
                     <?php endforeach; ?>
                 </div>
